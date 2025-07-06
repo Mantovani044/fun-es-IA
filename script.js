@@ -9,25 +9,25 @@ const perguntas = [
         enunciado: "Qual é o maior oceano da Terra?",
         alternativas: [
             {
-                texto: "Atlantico",
-                afirmacao: " Atlantico"
+                texto: " Atlântico",
+                afirmacao: " Alternativas escolhidas:   Atlântico, "
             },
             {
-                texto: "Pacifico",
-                afirmacao: "Pacifico"
+                texto: "Pacífico",
+                afirmacao: "Alternativas escolhidas:  Pacífico, "
             }
         ]
     },
     {
-        enunciado: "Qual fenômeno é responsável por mudar a posicao da Terra e gerar as pelas estações do ano?",
+        enunciado: "Qual fenômeno é responsável por mudar a posição da Terra e gerar as pelas estações do ano?",
         alternativas: [
             {
-                texto: "Rotacao.",
-                afirmacao: " Rotacao"
+                texto: "Rotação",
+                afirmacao: " rotação, "
             },
             {
-                texto: "Translacao.",
-                afirmacao: "Translacao"
+                texto: "Translação",
+                afirmacao: " translação, "
             }
         ]
     },
@@ -35,12 +35,12 @@ const perguntas = [
         enunciado: " Quantos continentes existem na Terra?",
         alternativas: [
             {
-                texto: "5.",
-                afirmacao: "5"
+                texto: "7",
+                afirmacao: " 7,"
             },
             {
-                texto: "7.",
-                afirmacao: " 7."
+                texto: "5",
+                afirmacao: "  5,"
             }
         ]
     },
@@ -48,12 +48,12 @@ const perguntas = [
         enunciado: "Em qual camada da Terra ocorre a maior parte dos terremotos?",
         alternativas: [
             {
-                texto: " Nucleo"
-                afirmacao: " "
+                texto: "Núcleo",
+                afirmacao: "núcleo, "
             },
             {
-                texto: "Crosta"
-                afirmacao: " "
+                texto: "Crosta",
+                afirmacao: "crosta, "
             }
         ]
     },
@@ -61,12 +61,12 @@ const perguntas = [
         enunciado: "Qual é o principal gás que compõe a atmosfera da Terra? ",
         alternativas: [
             {
-                texto: "Oxigenio",
-                afirmacao: ""
+                texto: "Oxigênio ",
+                afirmacao: "oxigênio. "
             },
             {
-                texto: " Nitrogenio",
-                afirmacao: " "
+                texto: " Nitrogênio",
+                afirmacao: "nitrogênio. "
             }
         ]
     },
@@ -99,15 +99,23 @@ function mostraAlternativas(){
 
 function respostaSelecionada(opcaoSelecionada) {
     const afirmacoes = opcaoSelecionada.afirmacao;
-    historiaFinal += afirmacoes + " ";
+    historiaFinal += afirmacoes + "  ";
     atual++;
     mostraPergunta();
+
+}
+function mostraResultado() {
+    caixaPerguntas.textContent = "Alternativas selecionadas: ";
+    textoResultado.textContent = historiaFinal;
+    caixaAlternativas.textContent = " Pacífico, translação, 7, crosta, nitrogênio. ";
+
 }
 
 function mostraResultado() {
-    caixaPerguntas.textContent = "Em 2049...";
+    caixaPerguntas.textContent = "Alternativas corretas: ";
     textoResultado.textContent = historiaFinal;
-    caixaAlternativas.textContent = "";
+    caixaAlternativas.textContent = " Pacífico, translação, 7, crosta, nitrogênio. ";
+
 }
 
 mostraPergunta();
